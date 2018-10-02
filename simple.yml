@@ -1,0 +1,23 @@
+version: '3'
+services:
+    opcplc:
+        image: hansgschossmann/iot-edge-opc-plc:latest
+        container_name: opcplc
+        hostname: opcplc
+        ports:
+            - "51210:51210"
+        command: --autoaccept
+    publisher:
+        image: mcr.microsoft.com/iotedge/opc-publisher:latest
+        container_name: publisher
+        depends_on:
+            - opcplc
+        hostname: publisher
+        volumes:
+            - '<reporoot>:/appdata'
+        ports:
+            - "62222:62222"
+        environment:
+            - _HUB_CS=${_HUB_CS}
+        command: publisher --aa --pf /appdata/publishednodes_opcplc.json
+

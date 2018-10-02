@@ -1,0 +1,10 @@
+[
+  {
+    "EndpointUrl": "opc.tcp://opcplc:51210",
+    "OpcNodes": [
+      {
+        "Id": "i=2258"
+      }
+    ]
+  }
+]
