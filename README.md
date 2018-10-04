@@ -76,16 +76,19 @@ A container is available as [hansgschossmann\iot-edge-opc-publisher-testclient](
 
 ## Configurations using docker-compose
 
-### OPC Publisher publishing data from OPC PLC
-- Update simple.yml and replace `<reporoot>` in the `volumes:` section with your actual fullqualified directory name
-- Run `docker-compose -f simple.yml up`
-
 ### A testbed for OPC Publisher
 - Run `docker-compose -f testbed.yml up`
 
 - Verify that data is sent to the IoTHub you configured by setting `_HUB_CS` using [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) or [iothub-explorer](https://github.com/Azure/iothub-explorer)
 - OPC Testclient is going to use IoTHub direct method calls and OPC method calls to configure OPC Publisher to publish/unpublish nodes from OPC Testserver
 
+### OPC Publisher publishing data from OPC PLC
+- Update simple.yml and replace `<reporoot>` in the `volumes:` section with your actual fullqualified directory name
+- Run `docker-compose -f simple.yml up`
+
+### PLC for Connected Factory v1
+- Update cfv1-simple.yml and replace `<reporoot>` in the `volumes:` section with your actual fullqualified directory name
+- Run `docker-compose -f cfv1-simple.yml up`
 
 ## How to solve problems
 - When starting a container you see the message:

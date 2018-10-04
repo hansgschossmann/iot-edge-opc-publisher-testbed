@@ -7,17 +7,24 @@ services:
         ports:
             - "50000:50000"
         command: --aa
+    proxy:
+        image: mcr.microsoft.com/iotedge/opc-proxy:1.0.4
+        container_name: proxy
+        depends_on:
+            - publisher
+        hostname: proxy
+        command: -c ${_HUB_CS} -w 
     publisher:
-        image: mcr.microsoft.com/iotedge/opc-publisher:latest
+        image: mcr.microsoft.com/iotedge/opc-publisher:2.1.4
         container_name: publisher
         depends_on:
             - opcplc
         hostname: publisher
         volumes:
-            - '<reporoot>:/appdata'
+            - '<reporoot>:/docker'
         ports:
             - "62222:62222"
         environment:
             - _HUB_CS=${_HUB_CS}
-        command: publisher --aa --pf /appdata/publishednodes_opcplc.json
+        command: publisher --di 60 --as=true --vc=true --pf publishednodes_opcplc.json
 
