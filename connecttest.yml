@@ -8,7 +8,7 @@ volumes:
 
 services:
     opcplc:
-        image: opc-plc:latest
+        image: mcr.microsoft.com/iotedge/opc-plc:latest
         container_name: opcplc-${_OPCVAULTID}
         hostname: opcplc-${_OPCVAULTID}
         volumes:
@@ -17,7 +17,7 @@ services:
             - "50000:50000"
         command: --csr  ${_PLC_OPT}
     opcclient:
-        image: opc-client:latest
+        image: mcr.microsoft.com/iotedge/opc-client:latest
         container_name: opcclient-${_OPCVAULTID}
         depends_on:
             - opcplc
