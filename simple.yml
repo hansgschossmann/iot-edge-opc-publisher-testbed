@@ -14,7 +14,7 @@ services:
             - opcplc
         hostname: publisher
         volumes:
-            - '<reporoot>:/appdata'
+            - '${_REPO_ROOT}:/appdata'
         ports:
             - "62222:62222"
         environment:

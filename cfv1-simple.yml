@@ -21,7 +21,7 @@ services:
             - opcplc
         hostname: publisher
         volumes:
-            - '<reporoot>:/docker'
+            - '${_REPO_ROOT}:/docker'
         ports:
             - "62222:62222"
         environment:

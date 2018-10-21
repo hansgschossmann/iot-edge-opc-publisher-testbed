@@ -3,25 +3,25 @@
     "EndpointUrl": "opc.tcp://opcplc:50000",
     "OpcNodes": [
       {
-        "ExpandedNodeId": "nsu=http://opcfoundation.org/UA/;i=2258"
+        "Id": "nsu=http://opcfoundation.org/UA/;i=2258"
       },
       {
-        "ExpandedNodeId": "nsu=http://microsoft.com/Opc/OpcPlc/;s=SpikeData"
+        "Id": "nsu=http://microsoft.com/Opc/OpcPlc/;s=SpikeData"
       },
       {
-        "ExpandedNodeId": "nsu=http://microsoft.com/Opc/OpcPlc/;s=DipData"
+        "Id": "nsu=http://microsoft.com/Opc/OpcPlc/;s=DipData"
       },
       {
-        "ExpandedNodeId": "nsu=http://microsoft.com/Opc/OpcPlc/;s=AlternatingBoolean"
+        "Id": "nsu=http://microsoft.com/Opc/OpcPlc/;s=AlternatingBoolean"
       },
       {
-        "ExpandedNodeId": "nsu=http://microsoft.com/Opc/OpcPlc/;s=RandomUnsignedInt32"
+        "Id": "nsu=http://microsoft.com/Opc/OpcPlc/;s=RandomUnsignedInt32"
       },
       {
-        "ExpandedNodeId": "nsu=http://microsoft.com/Opc/OpcPlc/;s=PositiveTrendData"
+        "Id": "nsu=http://microsoft.com/Opc/OpcPlc/;s=PositiveTrendData"
       },
       {
-        "ExpandedNodeId": "nsu=http://microsoft.com/Opc/OpcPlc/;s=NegativeTrendData"
+        "Id": "nsu=http://microsoft.com/Opc/OpcPlc/;s=NegativeTrendData"
       }
     ]
   }
