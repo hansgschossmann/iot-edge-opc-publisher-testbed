@@ -14,7 +14,9 @@ services:
         depends_on:
             - publisher
         hostname: testclient
-        command: -aa --i ${_HUB_CS} --id publisher --tu opc.tcp://testserver:62541/Quickstarts/ReferenceServer --pu opc.tcp://publisher:62222/UA/Publisher --ll info
+        environment:
+            - _HUB_CS=${_HUB_CS}
+        command: -aa --ic "${_HUB_CS}"  --id publisher --tu opc.tcp://testserver:62541/Quickstarts/ReferenceServer --pu opc.tcp://publisher:62222/UA/Publisher --ll info
 
     publisher:
         image: mcr.microsoft.com/iotedge/opc-publisher:latest
